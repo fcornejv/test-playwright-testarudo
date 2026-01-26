@@ -26,7 +26,7 @@ jobs:
     - name: Generar Resumen Rápido
       if: always()
       run: |
-        TOTAL=$(npx playwright test --list | grep "test" | wc -l)
+        TOTAL=$(npx playwright test --project=chromium --project=firefox --project=webkit | grep "test" | wc -l)
         FECHA=$(date +'%d/%m/%Y %H:%M')
         echo "RESUMEN : [$FECHA] | Ejecución Finalizada | Total: $TOTAL | Revisar Reporte en Artifacts"
     # --------------------------

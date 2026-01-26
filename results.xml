@@ -1,0 +1,32 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="0" time="61.085956">
+<testsuite name="1-Login-Automatizacion-home-testarudo.spec.ts" timestamp="2026-01-26T17:53:20.329Z" hostname="chromium" tests="1" failures="0" skipped="0" time="20.924" errors="0">
+<testcase name="Automatización en Testertestarudo › Los links principales redirigen correctamente" classname="1-Login-Automatizacion-home-testarudo.spec.ts" time="20.924">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2026-01-26T17:53:20.329Z" hostname="chromium" tests="2" failures="0" skipped="0" time="4.43" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="2.347">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="2.083">
+</testcase>
+</testsuite>
+<testsuite name="1-Login-Automatizacion-home-testarudo.spec.ts" timestamp="2026-01-26T17:53:20.329Z" hostname="firefox" tests="1" failures="0" skipped="0" time="25.866" errors="0">
+<testcase name="Automatización en Testertestarudo › Los links principales redirigen correctamente" classname="1-Login-Automatizacion-home-testarudo.spec.ts" time="25.866">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2026-01-26T17:53:20.329Z" hostname="firefox" tests="2" failures="0" skipped="0" time="11.238" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="5.525">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="5.713">
+</testcase>
+</testsuite>
+<testsuite name="1-Login-Automatizacion-home-testarudo.spec.ts" timestamp="2026-01-26T17:53:20.329Z" hostname="webkit" tests="1" failures="0" skipped="0" time="26.232" errors="0">
+<testcase name="Automatización en Testertestarudo › Los links principales redirigen correctamente" classname="1-Login-Automatizacion-home-testarudo.spec.ts" time="26.232">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2026-01-26T17:53:20.329Z" hostname="webkit" tests="2" failures="0" skipped="0" time="12.503" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="5.949">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="6.554">
+</testcase>
+</testsuite>
+</testsuites>
