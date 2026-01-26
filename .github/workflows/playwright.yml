@@ -22,14 +22,34 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test --project=chromium --project=firefox --project=webkit
       
-    # 2. Generar resumen con FECHA 
-    - name: Generar Resumen Rápido
+   # 2. Generar Reporte Ejecutivo de QA
+    - name: Generar Resumen Ejecutivo
       if: always()
       run: |
-        TOTAL=$(npx playwright test --project=chromium --project=firefox --project=webkit | grep "test" | wc -l)
+        # Extracción de métricas clave desde el XML
+        TOTAL=$(grep -oP 'tests="\K[^"]+' results.xml | head -1)
+        FALLOS=$(grep -oP 'failures="\K[^"]+' results.xml | head -1)
+        ERRORES=$(grep -oP 'errors="\K[^"]+' results.xml | head -1)
+        SALTADOS=$(grep -oP 'skipped="\K[^"]+' results.xml | head -1)
+        TIEMPO=$(grep -oP 'time="\K[^"]+' results.xml | head -1)
         FECHA=$(date +'%d/%m/%Y %H:%M')
-        echo "RESUMEN : [$FECHA] | Ejecución Finalizada | Total: $TOTAL | Revisar Reporte en Artifacts"
-    # --------------------------
+
+        # Formateo del mensaje con cabeceras y detalles
+        echo "===================================================="
+        echo "📊 INFORME EJECUTIVO DE CALIDAD (QA)"
+        echo "===================================================="
+        echo "📅 Fecha de Ejecución : $FECHA"
+        echo "⏱️ Tiempo Total        : ${TIEMPO} segundos"
+        echo "----------------------------------------------------"
+        echo "📈 MÉTRICAS DE PRUEBAS:"
+        echo "  ✅ Pruebas Totales  : $TOTAL"
+        echo "  ❌ Pruebas Fallidas : $FALLOS"
+        echo "  ⚠️ Errores Técnicos : $ERRORES"
+        echo "  ⏭️ Pruebas Saltadas : $SALTADOS"
+        echo "----------------------------------------------------"
+        echo "🔗 Estado Final: $( [ "$FALLOS" -eq 0 ] && echo "PASS ✅" || echo "FAIL ❌" )"
+        echo "===================================================="
+        # --------------------------
 
     # 3. Recolección de evidencias para reportes y Excel
     - name: Subir reportes y resultados para Excel
