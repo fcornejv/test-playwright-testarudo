@@ -20,8 +20,8 @@ jobs:
     
     # 1. Ejecución de los tests
     - name: Run Playwright tests
-      run: npx playwright test
-
+      run: npx playwright test --project=chromium --project=firefox --project=webkit
+      
     # 2. Generar resumen con FECHA 
     - name: Generar Resumen Rápido
       if: always()
